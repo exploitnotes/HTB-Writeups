@@ -14,10 +14,10 @@ port 8080  -- runing jetty server
 ## 2. Web Analysis
 
 We navigated to the port 80 and there is nothing useful in it.
-![alt text](Editor/images/website.png)
+![alt text](images/website.png)
 
 We navigated to the port 8080 and there is Xwiki service running.
-![alt text](Editor/images/website2.png)
+![alt text](images/website2.png)
 
 We identified the version as Xwiki 15.10.8
 
@@ -39,7 +39,7 @@ I used the PoC from the github repository for exploitation.
 ```bash
 git clone https://github.com/gunzf0x/CVE-2025-24893.git
 ```
-![alt text](Editor/images/exploitation.png)
+![alt text](images/exploitation.png)
 
 upon executing the script i got callback on my listener.
 
@@ -47,20 +47,20 @@ upon executing the script i got callback on my listener.
 ### Enemuration
 
 I check for usernmaes in /etc/passwd and i found a user 'Oliver'.
-![alt text](Editor/images/post-exploitation.png)
+![alt text](images/post-exploitation.png)
 
 I ran grep command to look for files containg string password.
 ```bash
 grep --color=auto -rli "password" /etc 2>dev/null
 ```
-![alt text](Editor/exploitation2.png)
+![alt text](images/exploitation2.png)
 
 I found the file /etc/xwiki/hibernate/cfg/xml. This is a configuration file that tells Xwiki how to connect to MYSQL Database.
 
 ```bash
 cat /etc/xwiki/hibernate.cfg.xml
 ```
-![alt text](Editor/images/exploitation3.png)
+![alt text](images/exploitation3.png)
 
 Here i found the cleartext credentials for the database.
 Password: "theEd1t0rTeam99"
@@ -71,7 +71,7 @@ I tried to login using the credentials via SSH:
 Username: "Oliver"
 Password: "theEd1t0rTeam99"
 Then I got the user flag 
-![alt text](Editor/images/flag.png)
+![alt text](images/flag.png)
 
 ## Privilige Escalati0on
 
@@ -93,11 +93,11 @@ find / -perm -u=s -type f 2>/dev/null
 ```
 
 This command will search for files owned by root.
-![alt text](Editor/images/escalation.png)
+![alt text](images/escalation.png)
 
 We found a few files but after from searching I found ndsudo is an important file in netdata.
 Let's try to check the version of the netdata
-![alt text](Editor/images/escalation2.png)
+![alt text](images/escalation2.png)
 
 Let's check for this version vulnerabilities.
 
@@ -132,9 +132,9 @@ chmod +x CVE-2024-32019.sh
 ./CVE-2024-32019
 ```
 
-![alt text](Editor/images/root.png)
+![alt text](images/root.png)
 
-![alt text](Editor/images/root-flag.png)
+![alt text](images/root-flag.png)
 
 We escalated to the root and found the root flag.
 
