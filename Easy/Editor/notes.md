@@ -4,6 +4,7 @@
 we began b scanning the target for open ports and running services.
 ```bash
 nmap -sCV -T4 -A -o scan.txt <TARGET_IP>
+```
 
 Findings:
 Port 22 -- running ssh service
@@ -36,6 +37,7 @@ I used the PoC from the github repository for exploitation.
 
 ```bash
 git clone https://github.com/gunzf0x/CVE-2025-24893.git
+```
 ![alt text](Editor/images/exploitation.png)
 
 upon executing the script i got callback on my listener.
@@ -49,13 +51,15 @@ I check for usernmaes in /etc/passwd and i found a user 'Oliver'.
 I ran grep command to look for files containg string password.
 ```bash
 grep --color=auto -rli "password" /etc 2>dev/null
+```
 ![alt text](Editor/exploitation2.png)
 
 I found the file /etc/xwiki/hibernate/cfg/xml. This is a configuration file that tells Xwiki how to connect to MYSQL Database.
 
 ```bash
 cat /etc/xwiki/hibernate.cfg.xml
-![alt text](Editor/exploitation3.png)
+```
+![alt text](Editor/images/exploitation3.png)
 
 Here i found the cleartext credentials for the database.
 Password: "theEd1t0rTeam99"
@@ -77,6 +81,7 @@ I checked my id and groups as 'oliver' user
 ```bash
 id
 groups
+```
 
 Oliver was a member of netdata group.
 
@@ -84,6 +89,7 @@ Oliver was a member of netdata group.
 
 ```bash
 find / -perm -u=s -type f 2>/dev/null
+```
 
 This command will search for files owned by root.
 ![alt text](Editor/images/escalation.png)
@@ -123,6 +129,7 @@ chmod +x CVE-2024-32019.sh
 
 #execute the exploit
 ./CVE-2024-32019
+```
 
 ![alt text](Editor/images/root.png)
 
