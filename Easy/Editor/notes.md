@@ -27,6 +27,7 @@ A search for version related vulnerabilty:
 CVE-2025-24893: Unauthenticated Remote Code Execution
 Technical Breakdwon: XWiki includes a macro called SolrSearch (defined in Main.SolrSearchMacros) that enables full-text search through the embedded Solr engine. The vulnerability stems from the way this macro evaluates search parameters in Groovy, failing to sanitize or restrict malicious input.
 Impact:  Attackers can execute arbitrary code on the server, compromising confidentiality, integrity, and availability.
+
 Reference: https://www.offsec.com/blog/cve-2025-24893/
 
 ## User Exploitation
