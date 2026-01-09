@@ -60,7 +60,7 @@ I found the file /etc/xwiki/hibernate/cfg/xml. This is a configuration file that
 ```bash
 cat /etc/xwiki/hibernate.cfg.xml
 ```
-![alt text](images/exploitation3.png)
+![alt text](images/e.png)
 
 Here i found the cleartext credentials for the database.
 Password: "theEd1t0rTeam99"
