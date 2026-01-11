@@ -20,7 +20,7 @@ For most machines in this category, I follow a standard workflow:
 | Machine Name | OS | Main Vulnerability | Difficulty (User/Root) | Link |
 | :--- | :--- | :--- | :--- | :--- |
 | **Editor** | Linux | CVE-2025-24893 (RCE) | 🟢 / 🟢 | [Walkthrough](./Editor/README.md) |
-| **Example_Box** | Windows | SMB Misconfiguration | 🟢 / 🟡 | [Walkthrough](./Example/README.md) |
+| **Expressway** | Linux | IKE Agressive mode/ Custom SUID Binary | 🟢 / 🟢 | [Walkthrough](./Expressway/README.md) |
 
 ---
 
