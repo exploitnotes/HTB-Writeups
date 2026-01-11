@@ -20,6 +20,7 @@ The repository is organized by machine difficulty to make navigation easier:
 | Machine | Date | Focus | Walkthrough |
 | :--- | :--- | :--- | :--- |
 | **Editor** | Jan 2026 | RCE (XWiki), PATH Hijacking | [View Report](./Easy/README.md) |
+| **Expressway**| Jan 2026| IKE Aggressive mode,Custom SUID Binary| [View Report](./Easy/README.md)
 
 ### 🟡 Medium
 *Coming Soon...*
