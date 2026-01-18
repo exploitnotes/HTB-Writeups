@@ -21,7 +21,7 @@ The repository is organized by machine difficulty to make navigation easier:
 | :--- | :--- | :--- | :--- |
 | **Editor** | Jan 2026 | RCE (XWiki), PATH Hijacking | [View Report](./Easy/README.md) |
 | **Expressway**| Jan 2026| IKE Aggressive mode,Custom SUID Binary| [View Report](./Easy/README.md) |
-| **MonitorsFour** | | Jan 2026 | RCE (CVE-2025-24367) , Exposed Docker Remote API (Unauthenticated) | [View Report](./Easy/README.md) |
+| **MonitorsFour** | Jan 2026  | RCE (CVE-2025-24367) , Exposed Docker Remote API(Unauthenticated)  | [View Report](./Easy/README.md) |
 
 ### 🟡 Medium
 *Coming Soon...*
