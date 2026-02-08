@@ -44,7 +44,7 @@ git clone https://github.com/gunzf0x/CVE-2025-24893.git
 upon executing the script i got callback on my listener.
 
 
-### Enemuration
+### Enumeration
 
 I check for usernmaes in /etc/passwd and i found a user 'Oliver'.
 ![alt text](images/post-exploitation.png)
