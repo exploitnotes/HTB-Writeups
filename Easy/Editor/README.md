@@ -1,4 +1,4 @@
-## 1.Reconnasiance
+## Reconnasiance
 
 ### Port Scan
 we began b scanning the target for open ports and running services.
@@ -11,7 +11,7 @@ Port 22 -- running ssh service
 port 80 -- running nginx server
 port 8080  -- runing jetty server
 
-## 2. Web Analysis
+## Web Analysis
 
 We navigated to the port 80 and there is nothing useful in it.
 ![alt text](images/website.png)
@@ -75,7 +75,7 @@ Then I got the user flag
 
 ## Privilige Escalati0on
 
-### Enemuraton for Root 
+### Enumeration for Root 
 
 I checked my id and groups as 'oliver' user
 
@@ -101,7 +101,7 @@ Let's try to check the version of the netdata
 
 Let's check for this version vulnerabilities.
 
-###CVE-2024–32019 (Root.txt)
+### CVE-2024–32019 (Root.txt)
 
 CVE-2024–32019 is a local privilege-escalation flaw in Netdata’s SUID helper ndsudo that lets a local user execute arbitrary programs as root via an untrusted search path (PATH hijacking). The issue exists because ndsudo restricts command names but resolves them using the caller’s PATH, allowing a user to place a malicious binary earlier in PATH and have ndsudo run it with root privileges. It affects Netdata Agent versions ≥ v1.45.0 and < v1.45.3, and ≥ v1.44.0–60 and < v1.45.0–169, and carries a CVSS v3.1 score of 8.8 (High).
 
