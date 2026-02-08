@@ -65,7 +65,7 @@ cat /etc/xwiki/hibernate.cfg.xml
 Here i found the cleartext credentials for the database.
 Password: "theEd1t0rTeam99"
 
-###User flag
+### User flag
 
 I tried to login using the credentials via SSH:
 Username: "Oliver"
