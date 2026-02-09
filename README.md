@@ -24,7 +24,9 @@ The repository is organized by machine difficulty to make navigation easier:
 | **MonitorsFour** | Jan 2026  | RCE (CVE-2025-24367) , Exposed Docker Remote API(Unauthenticated)  | [View Report](./Easy/README.md) |
 
 ### 🟡 Medium
-*Coming Soon...*
+| Machine | Date | Focus | Walkthrough |
+| :--- | :--- | :--- | :--- |
+| **Pterodactyl** | Feb 2026 | RCE(CVE-2025-43912), Privilige Escalation(CVE-2025-6019/6018) | [View Report](./pterodactyl/README.md) |
 
 ### 🔴 Hard
 *Coming Soon...*
