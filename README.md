@@ -26,7 +26,7 @@ The repository is organized by machine difficulty to make navigation easier:
 ### 🟡 Medium
 | Machine | Date | Focus | Walkthrough |
 | :--- | :--- | :--- | :--- |
-| **Pterodactyl** | Feb 2026 | RCE(CVE-2025-43912), Privilige Escalation(CVE-2025-6019/6018) | [View Report](./medium/README.md) |
+| **Pterodactyl** | Feb 2026 | RCE(CVE-2025-43912), Privilige Escalation(CVE-2025-6019/6018) | [View Report](./Medium/README.md) |
 
 ### 🔴 Hard
 *Coming Soon...*
