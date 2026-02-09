@@ -1,4 +1,4 @@
-# 🟢 HackTheBox: Easy Tier Writeups
+# 🟡 HackTheBox: Medium Tier Writeups
 
 This directory serves as a collection of writeups for **Medium-difficulty** machines on HackTheBox. These machines are chosen to build and reinforce foundational penetration testing skills, focusing on thorough enumeration and understanding common service vulnerabilities.
 
