@@ -22,6 +22,8 @@ For most machines in this category, I follow a standard workflow:
 | **Editor** | Linux | CVE-2025-24893 (RCE) | 🟢 / 🟢 | [Walkthrough](./Editor/README.md) |
 | **Expressway** | Linux | IKE Agressive mode/ Custom SUID Binary | 🟢 / 🟢 | [Walkthrough](./Expressway/README.md) |
 | **MonitorsFour** | Linux | CVE-2025-24367(RCE)/ Exposed Docker Remote API (Unauthenticated) | 🟢 / 🟢 | [Walkthrough](./MonitorsFour/README.md) |
+| **Facts** | Linux | Information Disclosure + Misconfiguration | 🟢 / 🟢 | [Walkthrough](./Facts/README.md) |
+| **WingData** | Linux | Web Application Vulnerability (Auth/Injection) | 🟢 / 🟢 | [Walkthrough](./Wingdata/README.md) |
 
 ---
 

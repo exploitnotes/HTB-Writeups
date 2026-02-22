@@ -22,11 +22,15 @@ The repository is organized by machine difficulty to make navigation easier:
 | **Editor** | Jan 2026 | RCE (XWiki), PATH Hijacking | [View Report](./Easy/README.md) |
 | **Expressway**| Jan 2026| IKE Aggressive mode,Custom SUID Binary| [View Report](./Easy/README.md) |
 | **MonitorsFour** | Jan 2026  | RCE (CVE-2025-24367) , Exposed Docker Remote API(Unauthenticated)  | [View Report](./Easy/README.md) |
+| **Facts** | Feb 2026 | Information Disclosure + Misconfiguration | [Walkthrough](./Easy/README.md) |
+| **WingData** | Feb 2026 | Web Application Vulnerability (Auth/Injection) |  [Walkthrough](./Easy/README.md) |
 
 ### 🟡 Medium
 | Machine | Date | Focus | Walkthrough |
 | :--- | :--- | :--- | :--- |
 | **Pterodactyl** | Feb 2026 | RCE(CVE-2025-43912), Privilige Escalation(CVE-2025-6019/6018) | [View Report](./Medium/README.md) |
+| **AirTouch** | Feb 2026 | Credential Exposure + Network Pivoting  | [Walkthrough](./Medium/README.md) |
+| **Interpreter**| Feb 2026 | Mirth Connect RCE + Eval Injection (PrivEsc) | [Walkthrough](./Medium/README.md) |
 
 ### 🔴 Hard
 *Coming Soon...*

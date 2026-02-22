@@ -21,6 +21,7 @@ For most machines in this category, I follow a standard workflow:
 | :--- | :--- | :--- | :--- | :--- |
 | **Pterodactyl** | Linux | CVE-2025-6018/16019 (RCE) |  🟡/ 🟡 | [Walkthrough](./pterodactyl/README.md) |
 | **Interpreter**| Linux | CVE-2023-43208 (Mirth Connect RCE) + Eval Injection (PrivEsc) | 🟡 / 🟡 | [Walkthrough](./interpreter/README.md) |
+| **AirTouch** | Linux | Credential Exposure + Network Pivoting | 🟡 / 🟡 | [Walkthrough](./Airtouch/README.md) |
 
 ---
 
