@@ -24,6 +24,7 @@ For most machines in this category, I follow a standard workflow:
 | **MonitorsFour** | Linux | CVE-2025-24367(RCE)/ Exposed Docker Remote API (Unauthenticated) | 🟢 / 🟢 | [Walkthrough](./MonitorsFour/README.md) |
 | **Facts** | Linux | Information Disclosure + Misconfiguration | 🟢 / 🟢 | [Walkthrough](./Facts/README.md) |
 | **WingData** | Linux | Web Application Vulnerability (Auth/Injection) | 🟢 / 🟢 | [Walkthrough](./Wingdata/README.md) |
+| **CCTV** | Mar 2026 | Internal Reconnaissance, API Abuse, Service Misconfiguration | 🟢 / 🟢 |[Walkthrough](./Easy/README.md) |
 
 ---
 

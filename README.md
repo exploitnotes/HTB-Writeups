@@ -24,6 +24,7 @@ The repository is organized by machine difficulty to make navigation easier:
 | **MonitorsFour** | Jan 2026  | RCE (CVE-2025-24367) , Exposed Docker Remote API(Unauthenticated)  | [View Report](./Easy/README.md) |
 | **Facts** | Feb 2026 | Information Disclosure + Misconfiguration | [Walkthrough](./Easy/README.md) |
 | **WingData** | Feb 2026 | Web Application Vulnerability (Auth/Injection) |  [Walkthrough](./Easy/README.md) |
+| **CCTV** | Mar 2026 | Internal Reconnaissance, API Abuse, Service Misconfiguration | [Walkthrough](./Easy/README.md) |
 
 ### 🟡 Medium
 | Machine | Date | Focus | Walkthrough |
@@ -35,7 +36,7 @@ The repository is organized by machine difficulty to make navigation easier:
 ### 🔴 Hard
 | Machine | Date | Focus | Walkthrough |
 | :--- | :--- | :--- | :--- |
-| **Pirate** | Feb 2026 | gMSA Enumeration, Kerberoasting, AD Privilege Escalation  | [View Report](./Hard/README.md) |
+| **Pirate** | Feb 2026 | gMSA Enumeration, Kerberoasting, AD Privilege Escalation  | [Walkthrough](./Hard/README.md) |
 
 ---
 
