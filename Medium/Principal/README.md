@@ -114,7 +114,7 @@ A known vulnerability exists for this version. - CVE-2026-29000 ( pac4j-jwt Auth
 
 CVE-2026-29000 is a critical authentication bypass vulnerability affecting the pac4j-jwt authentication library. The flaw occurs when the JwtAuthenticator improperly validates encrypted JWT (JWE) tokens, allowing an attacker to craft a malicious token that bypasses signature verification and impersonates arbitrary users.
 
-Here is the exploit: [text](exploit.py)
+Here is the exploit: [CVE-2026-29000-PoC](exploit.py)
 
 ```bash
  python3 exploitt.py http://10.129.244.220:8080

@@ -32,6 +32,7 @@ The repository is organized by machine difficulty to make navigation easier:
 | **Pterodactyl** | Feb 2026 | RCE(CVE-2025-43912), Privilige Escalation(CVE-2025-6019/6018) | [Walkthorugh](./Medium/README.md) |
 | **AirTouch** | Feb 2026 | Credential Exposure + Network Pivoting  | [Walkthrough](./Medium/README.md) |
 | **Interpreter**| Feb 2026 | Mirth Connect RCE + Eval Injection (PrivEsc) | [Walkthrough](./Medium/README.md) |
+| **Principal** | Linux | JWT Authentication Bypass (CVE-2026-29000) + SSH CA Certificate Forgery | [Walkthrough](./Medium/README.md) |
 
 ### 🔴 Hard
 | Machine | Date | Focus | Walkthrough |
