@@ -40,6 +40,7 @@ The repository is organized to make navigation easier:
 | Machine | Date | Focus | Notes |
 | :--- | :--- | :--- | :--- |
 | Pirate | Feb 2026 | gMSA Enumeration, Kerberoasting, AD PrivEsc | [Notes](./Hard/README.md) |
+| **Snapped** | March 2026 | CVE-2026-27944, Credential Cracking, CVE-2026-3888 snapd LPE | [Walkthrough](./Hard/README.md) |
 
 ### 🏰 Fortress (Conceptual Notes Only)
 | Machine | Date | Focus | Notes |

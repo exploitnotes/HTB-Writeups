@@ -22,6 +22,7 @@ Hard machines usually require chaining multiple vulnerabilities together. My wor
 | Machine Name | OS | Main Vulnerability | Difficulty (User/Root) | Link |
 | :--- | :--- | :--- | :--- | :--- |
 | **Pirate** | Windows | gMSA Enumeration, Kerberoasting, AD Privilege Escalation | 🔴 / 🔴 | [Walkthrough](./Pirate/README.md) |
+| **Snapped** | Linux | CVE-2026-27944, Credential Cracking, CVE-2026-3888 snapd LPE | 🔴 / 🔴 | [Walkthrough](./Snapped/README.md) |
 
 ---
 
