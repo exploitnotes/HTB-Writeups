@@ -4,22 +4,22 @@
 
 **Topics Learned:**
 - SNMP enumeration
-- Fuzzing timestamped backups
-- Flask development apps and LFI concepts
-- Reverse shell basics
-- Privilege escalation concepts
+- Backup file fuzzing
+- Flask debug and LFI concepts
+- Reverse shell fundamentals
+- Privilege escalation
 - Cipher decoding (Base64 + Vigenère)
 
 **Key Learning Points:**
-- Enumeration can reveal hidden services and internal scripts
-- Backup files often expose source code and sensitive information
-- Debug frameworks in development environments can introduce security risks
-- Chaining multiple vulnerabilities is often required for full system compromise
-- Basic cryptography knowledge helps in solving final challenge stages
+- Enumeration reveals hidden services and internal data
+- Backup files may expose source code and credentials
+- Debug environments can introduce critical vulnerabilities
+- Successful exploitation often requires chaining multiple issues
+- Basic cryptography is useful for decoding challenge data
 
 **Skills Strengthened:**
-- Web application enumeration
-- Source code review
-- Exploitation methodology
-- Linux privilege escalation techniques
-- Cryptography basics
+- Web enumeration techniques
+- Source code analysis
+- Exploitation workflow
+- Linux privilege escalation
+- Cryptography fundamentals

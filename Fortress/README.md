@@ -8,8 +8,8 @@ This folder contains conceptual notes from HackTheBox Fortress machines.
 
 | Machine | Date | Key Topics | Notes |
 | :--- | :--- | :--- | :--- |
-| Akerva | Mar 2026 | SNMP Enumeration, Backup Fuzzing, Flask Development Apps, LFI, Reverse Shells, Privilege Escalation, Cipher Decoding | [Notes](./Akerva/README.md) |
-
+| Akerva | Mar 2026 | SNMP Enumeration, Backup Fuzzing, Flask Development Apps, LFI, Reverse Shells, Privilege Escalation, Cipher Decoding | [Walkthrough](./Akerva/README.md) |
+| Faraday | Mar 2026 | API Fuzzing, Auth Bypass, Hash Cracking, SSH Foothold, Linux Privilege Escalation, Rootkit Detection | [Walkthrough](./Faraday/README.md) |
 ---
 
 ## Key Learning Areas

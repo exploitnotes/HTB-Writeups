@@ -26,6 +26,7 @@ The repository is organized to make navigation easier:
 | Facts | Feb 2026 | Information Disclosure, Misconfiguration | [Walkthrough](./Easy/README.md) |
 | WingData | Feb 2026 | Web App Vulnerabilities (Auth/Injection) | [Walkthrough](./Easy/README.md) |
 | CCTV | Mar 2026 | Internal Recon, API Abuse | [Walkthrough](./Easy/README.md) |
+| **Kobold** | Mar 2026 | JSON Injection, RCE (CVE-2026-23744), Docker Privilege Escalation, Container Escape | 🟡 / 🔴 | [Walkthrough](./Easy/README.md) |
 
 ### 🟡 Medium
 | Machine | Date | Focus | Notes |
@@ -41,12 +42,14 @@ The repository is organized to make navigation easier:
 | :--- | :--- | :--- | :--- |
 | Pirate | Feb 2026 | gMSA Enumeration, Kerberoasting, AD PrivEsc | [Walkthrough](./Hard/README.md) |
 | **Snapped** | March 2026 | CVE-2026-27944, Credential Cracking, CVE-2026-3888 snapd LPE | [Walkthrough](./Hard/README.md) |
+| **Fries** | Mar 2026 | Enumeration, Credential Abuse, Container Pivoting, Active Directory Exploitation, AD CS Attacks | [Walkthrough](./Hard/README.md) |
 
 ### 🏰 Fortress (Conceptual Notes Only)
 | Machine | Date | Focus | Notes |
 | :--- | :--- | :--- | :--- |
 | Akerva | Mar 2026 | SNMP Enumeration, Backup Fuzzing, Flask, LFI, PrivEsc, Cipher Decoding | [Walkthrough](./Fortress/Akerva/notes.md) |
 | Other Fortress Machines | TBD | Various Concepts | [Walkthrough](./Fortress/README.md) |
+| Faraday | Mar 2026 | API Fuzzing, Auth Bypass, Hash Cracking, SSH Foothold, Linux Privilege Escalation, Rootkit Detection | [Walkthrough](./Fortress/README.md) |
 
 ---
 

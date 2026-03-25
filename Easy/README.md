@@ -25,7 +25,7 @@ For most machines in this category, I follow a standard workflow:
 | **Facts** | Linux | Information Disclosure + Misconfiguration | 🟢 / 🟢 | [Walkthrough](./Facts/README.md) |
 | **WingData** | Linux | Web Application Vulnerability (Auth/Injection) | 🟢 / 🟢 | [Walkthrough](./Wingdata/README.md) |
 | **CCTV** | Mar 2026 | Internal Reconnaissance, API Abuse, Service Misconfiguration | 🟢 / 🟢 |[Walkthrough](./Easy/README.md) |
-
+| **Kobold** | Mar 2026 | JSON Injection, RCE (CVE-2026-23744), Docker Privilege Escalation, Container Escape | 🟢 / 🟢 | [Walkthrough](./Kobold/README.md) |
 ---
 
 ##  Common Tools Used
