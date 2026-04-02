@@ -44,6 +44,7 @@ The repository is organized to make navigation easier:
 | **Pirate** | Feb 2026 | gMSA Enumeration, Kerberoasting, AD PrivEsc | [Walkthrough](./Hard/README.md) |
 | **Snapped** | Mar 2026 | CVE-2026-27944, Credential Cracking, CVE-2026-3888 snapd LPE | [Walkthrough](./Hard/README.md) |
 | **Fries** | Mar 2026 | Enumeration, Credential Abuse, Container Pivoting, Active Directory Exploitation, AD CS Attacks | [Walkthrough](./Hard/README.md) |
+| **DarkZero** | Apr 2026 | MSSQL Abuse, Linked Server Pivoting, Privilege Escalation, Kerberos Abuse (DC01$ TGT), DCSync, Pass-the-Hash | [Walkthrough](./Hard/README.md) |
 
 ### 🏰 Fortress (Conceptual Notes Only)
 | Machine | Date | Focus | Notes |
